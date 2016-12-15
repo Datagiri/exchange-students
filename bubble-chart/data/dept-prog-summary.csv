@@ -1,0 +1,30 @@
+id,dept,deptcode,degree,program,count
+1,Aerospace Engineering,AE,B. Tech.,Bachelors,3
+2,Chemical Engineering,CE,B. Tech.,Bachelors,10
+3,Civil Engineering,CL,B. Tech.,Bachelors,7
+4,Computer Science and Engineering,CS,B. Tech.,Bachelors,5
+5,Electrical Engineering,EE,B. Tech.,Bachelors,12
+6,Mechanical Engineering,ME,B. Tech.,Bachelors,9
+7,Metallurgical Engg. & Materials Science,MM,B. Tech.,Bachelors,2
+8,Physics Department,PH,B. Tech.,Bachelors,4
+9,Aerospace Engineering,AE,Dual Degree,DD,9
+10,Chemical Engineering,CE,Dual Degree,DD,8
+11,Chemistry,CH,Intergrated M.Sc.,DD,2
+12,Civil Engineering,CL,Dual Degree,DD,5
+13,Computer Science and Engineering,CS,Dual Degree,DD,6
+14,Electrical Engineering,EE,Dual Degree,DD,39
+15,Energy Science and Engineering,EN,Dual Degree,DD,15
+16,Mechanical Engineering,ME,Dual Degree,DD,34
+17,Metallurgical Engg. & Materials Science,MM,Dual Degree,DD,6
+18,Physics Department,PH,Dual Degree,DD,2
+24,School of Biosciences,BS,M. Tech.,Masters,1
+19,Civil Engineering,CL,M. Tech.,Masters,1
+20,Electrical Engineering,EE,M. Tech.,Masters,1
+21,Humanities and Social Sciences,HS,M. Phil.,Masters,2
+22,Industrial Design Centre,IDC,M. Des.,Masters,4
+23,Mechanical Engineering,ME,M. Tech.,Masters,1
+25,SJM School of Management,MG,M. Mgmt.,Masters,11
+26,Biosciences & Bioengg.,BS,Ph.D.,Postgrad,2
+27,Centre for Environmental Science & Engg.,CESE,Ph.D.,Postgrad,1
+28,Energy Science and Engineering,EN,Ph.D.,Postgrad,2
+29,Systems & Control Engg.,SC,Ph.D.,Postgrad,1
