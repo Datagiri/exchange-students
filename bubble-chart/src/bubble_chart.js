@@ -1,8 +1,8 @@
 
 function bubbleChart() {
   // Constants for sizing
-  var width = 960;
-  var height = 640;
+  var width = 700;
+  var height = 800;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 100);
@@ -40,15 +40,32 @@ function bubbleChart() {
 
   // locations of the prog titles.
   var progTitle = {
-    "Bachelors":    { x: width / 5 - 75,     y: height / 2 },
-    "Dual Degree":  { x: 2 * width / 5 - 20,     y: height / 2 },
-    "Masters":      { x: 3 * width / 5 + 60,     y: height / 2 },
-    "PhD":          { x: 4 * width / 5 + 65,     y: height / 2 },
+    "Bachelors":    { x: width / 5 - 60,         y: height / 2 + 40},
+    "Dual Degree":  { x: 2 * width / 5 - 5,      y: height / 2 + 40},
+    "Masters":      { x: 3 * width / 5 + 45,     y: height / 2 + 40},
+    "PhD":          { x: 4 * width / 5 + 50,     y: height / 2 + 40},
+  };
+
+
+  // locations of the dept titles.
+  var deptTitle = {
+    "Electrical":         { x: 1 * width / 5 - 40,    y: 1 * height / 4 - 120},
+    "Mechanical":         { x: 2 * width / 5 - 5,     y: 1 * height / 4 - 120},
+    "Chemical":           { x: 3 * width / 5 + 15,    y: 1 * height / 4 - 120},
+    "Energy":             { x: 4 * width / 5 + 30,    y: 1 * height / 4 - 120},
+    "Civil":              { x: 1 * width / 5 - 40,    y: 2 * height / 4 - 50},
+    "Aerospace":          { x: 2 * width / 5 - 5,     y: 2 * height / 4 - 50},
+    "Management":         { x: 3 * width / 5 + 15,    y: 2 * height / 4 - 50},
+    "Comp. Science":      { x: 4 * width / 5 + 30,    y: 2 * height / 4 - 50},
+    "Metallurgy":         { x: 1 * width / 5 - 40,    y: 3 * height / 4 - 40},
+    "Physics":            { x: 2 * width / 5 - 5,     y: 3 * height / 4 - 40},
+    "Design":             { x: 3 * width / 5 + 15,    y: 3 * height / 4 - 40},
+    "Other":              { x: 4 * width / 5 + 30,    y: 3 * height / 4 - 40},
   };
 
   // Used when setting up force and
   // moving around nodes
-  var damper = 0.102;
+  var damper = 0.112;
 
   // These will be set in create_nodes and create_vis
   var svg = null;
@@ -83,13 +100,14 @@ function bubbleChart() {
   // Nice looking colors
   var fillColor = d3.scale.ordinal()
     .domain(["EE", "ME", "CE", "EN", "CL", "AE", "MG ", "CS", "MM", "PH", "IDC", "BS", "HS", "CH", "SC", "CESE"])
-    .range(['#1F78B4', '#33A02C', '#E31A1C', '#FF7F00', '#6A3D9A', '#B15928', '#A6CEE3', '#B2DF8A', '#FB9A99', '#FDBF6F', '#CAB2D6', '#FFFF99', '#FFFF99', '#FFFF99', '#FFFF99', '#FFFF99']);
+    // .range(['#1F78B4', '#33A02C', '#E31A1C', '#FF7F00', '#6A3D9A', '#B15928', '#A6CEE3', '#B2DF8A', '#FB9A99', '#FDBF6F', '#CAB2D6', '#FFFF99', '#FFFF99', '#FFFF99', '#FFFF99', '#FFFF99']);
+    .range(['#8DD3C7', '#FFFFB3', '#BEBADA', '#FB8072', '#80B1D3', '#FDB462', '#C3EE79', '#FCCDE5', '#D9D9D9', '#BC80BD', '#CCEBC5', '#FFED6F', '#FFED6F', '#FFED6F', '#FFED6F', '#FFED6F']);
 
 
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
     .exponent(0.5)
-    .range([2, 85]);
+    .range([2, 60]);
 
   /*
    * This data manipulation function takes the raw data from
@@ -212,7 +230,7 @@ function bubbleChart() {
       });
     }
     else if(displayName === 'dept'){ 
-      // showDepts();
+      showDepts();
       force.on('tick', function (e) {
         bubbles.each(moveToDept(e.alpha))
           .attr('cx', function (d) { return d.x; })
@@ -268,6 +286,21 @@ function bubbleChart() {
       .attr('class', 'prog')
       .attr('x', function (d) { return progTitle[d].x; })
       .attr('y', function (d) { return progTitle[d].y - 200; })
+      .attr('text-anchor', 'middle')
+      .text(function (d) { return d; });
+  }
+
+  function showDepts() {
+    // Another way to do this would be to create
+    // the year texts once and then just hide them.
+    var deptData = d3.keys(deptTitle);
+    var depts = svg.selectAll('.dept')
+      .data(deptData);
+
+    depts.enter().append('text')
+      .attr('class', 'dept')
+      .attr('x', function (d) { return deptTitle[d].x; })
+      .attr('y', function (d) { return deptTitle[d].y; })
       .attr('text-anchor', 'middle')
       .text(function (d) { return d; });
   }

@@ -34,10 +34,18 @@ a, a:visited, a:active {
   margin-top: 10px;
 }
 
-.year {
+.prog {
   font-size: 21px;
   fill: #aaa;
   cursor: default;
+  text-align: center;
+}
+
+.dept {
+  font-size: 21px;
+  fill: #aaa;
+  cursor: default;
+  text-align: center;
 }
 
 .tooltip {
