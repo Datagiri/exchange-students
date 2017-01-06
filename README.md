@@ -7,7 +7,7 @@ Descriptions of directories:
 `bubble-chart/`  
 Bubble-chart summarizing the departments and programs of outbound exchange students from IITB.  
 Code built upon [Jim Vallandingham's animated bubble chart repository](https://github.com/vlandham/bubble_chart)  
-A live version of this code is [here](https://www.cse.iitb.ac.in/~ananddhoot/chart/)  
+A live version of this code is [here](https://datagiri.github.io/exchange-students/)  
 
 
 ## Running
