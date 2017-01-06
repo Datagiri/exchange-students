@@ -1,7 +1,7 @@
 
 function bubbleChart() {
   // Constants for sizing
-  var width = 700;
+  var width = 600;
   var height = 800;
 
   // tooltip for mouseover functionality
