@@ -225,9 +225,10 @@ function bubbleChart() {
 
   function groupBubbles() {
     hideLabels();
-
+    showProgs();
+    
     force.on('tick', function (e) {
-      bubbles.each(moveToCenter(e.alpha))
+      bubbles.each(moveToProg(e.alpha))
         .attr('cx', function (d) { return d.x; })
         .attr('cy', function (d) { return d.y; });
     });
