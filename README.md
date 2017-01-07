@@ -1,8 +1,12 @@
 # exchange-students
 
 Visualizations for the blog post on Exchange Students.  
+The raw data has not been added to the repository to ensure the anonymity and the privacy of all individuals involved.  
 
-Descriptions of directories:  
+
+
+
+## Directories:  
 
 `bubble-chart/`  
 Bubble-chart summarizing the departments and programs of outbound exchange students from IITB.  
