@@ -37,6 +37,7 @@ a, a:visited, a:active {
 .prog {
   font-size: 15px;
   fill: #aaa;
+  color: #000000;
   cursor: default;
   text-align: center;
 }
@@ -44,6 +45,7 @@ a, a:visited, a:active {
 .dept {
   font-size: 15px;
   fill: #aaa;
+  color: #000000;
   cursor: default;
   text-align: center;
 }
