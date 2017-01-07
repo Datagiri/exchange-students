@@ -2,7 +2,7 @@
 function bubbleChart() {
   // Constants for sizing
   var width = 600;
-  var height = 800;
+  var height = 600;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('gates_tooltip', 100);
@@ -12,10 +12,10 @@ function bubbleChart() {
   var center = { x: width / 2, y: height / 2 };
 
   var progCenters = {
-    "Bachelors": { x: width / 5,     y: height / 2 },
-    "DD":        { x: 2 * width / 5,     y: height / 2 },
-    "Masters":   { x: 3 * width / 5,     y: height / 2 },
-    "Postgrad":  { x: 4 * width / 5,     y: height / 2 },
+    "Bachelors": { x: 2 * width / 5 + 25,     y: height / 2 },
+    "DD":        { x: 1 * width / 5 + 25,     y: height / 2 },
+    "Masters":   { x: 3 * width / 5 + 20,     y: height / 2 },
+    "Postgrad":  { x: 4 * width / 5 + 15,     y: height / 2 },
   };
 
   var deptCenters = {
@@ -40,27 +40,43 @@ function bubbleChart() {
 
   // locations of the prog titles.
   var progTitle = {
-    "Bachelors":    { x: width / 5 - 60,         y: height / 2 + 40},
-    "Dual Degree":  { x: 2 * width / 5 - 5,      y: height / 2 + 40},
-    "Masters":      { x: 3 * width / 5 + 45,     y: height / 2 + 40},
-    "PhD":          { x: 4 * width / 5 + 50,     y: height / 2 + 40},
+    "Bachelors":    { x: 2 * width / 5 + 35,      y: height / 2 + 80},
+    "(52)":         { x: 2 * width / 5 + 35,      y: height / 2 + 95},
+    "Dual Degree":  { x: 1 * width / 5 - 10,      y: height / 2 + 80},
+    "(126)":        { x: 1 * width / 5 - 10,      y: height / 2 + 95},
+    "Masters":      { x: 3 * width / 5 + 55,      y: height / 2 + 80},
+    "(21)":         { x: 3 * width / 5 + 55,      y: height / 2 + 95},
+    "PhD":          { x: 4 * width / 5 + 55,      y: height / 2 + 80},
+    "(6)":          { x: 4 * width / 5 + 55,      y: height / 2 + 95},
   };
 
 
   // locations of the dept titles.
   var deptTitle = {
-    "Electrical":         { x: 1 * width / 5 - 40,    y: 1 * height / 4 - 120},
-    "Mechanical":         { x: 2 * width / 5 - 5,     y: 1 * height / 4 - 120},
-    "Chemical":           { x: 3 * width / 5 + 15,    y: 1 * height / 4 - 120},
-    "Energy":             { x: 4 * width / 5 + 30,    y: 1 * height / 4 - 120},
-    "Civil":              { x: 1 * width / 5 - 40,    y: 2 * height / 4 - 50},
+    "Electrical":         { x: 1 * width / 5 - 35,    y: 1 * height / 4 - 100},
+    "(52)":               { x: 1 * width / 5 - 35,    y: 1 * height / 4 - 85},
+    "Mechanical":         { x: 2 * width / 5 - 5,     y: 1 * height / 4 - 100},
+    "(44)":               { x: 2 * width / 5 - 5,     y: 1 * height / 4 - 85},
+    "Chemical":           { x: 3 * width / 5 + 15,    y: 1 * height / 4 - 100},
+    "(18)":               { x: 3 * width / 5 + 15,    y: 1 * height / 4 - 85},
+    "Energy":             { x: 4 * width / 5 + 30,    y: 1 * height / 4 - 100},
+    "(17)":               { x: 4 * width / 5 + 30,    y: 1 * height / 4 - 85},
+    "Civil":              { x: 1 * width / 5 - 35,    y: 2 * height / 4 - 50},
+    "(13)":               { x: 1 * width / 5 - 35,    y: 2 * height / 4 - 35},
     "Aerospace":          { x: 2 * width / 5 - 5,     y: 2 * height / 4 - 50},
+    "(12)":               { x: 2 * width / 5 - 5,     y: 2 * height / 4 - 35},
     "Management":         { x: 3 * width / 5 + 15,    y: 2 * height / 4 - 50},
+    "(11) ":               { x: 3 * width / 5 + 15,    y: 2 * height / 4 - 35},
     "Comp. Science":      { x: 4 * width / 5 + 30,    y: 2 * height / 4 - 50},
-    "Metallurgy":         { x: 1 * width / 5 - 40,    y: 3 * height / 4 - 40},
+    "(11)":               { x: 4 * width / 5 + 30,    y: 2 * height / 4 - 35},
+    "Metallurgy":         { x: 1 * width / 5 - 35,    y: 3 * height / 4 - 40},
+    "(8)":                { x: 1 * width / 5 - 35,    y: 3 * height / 4 - 25},
     "Physics":            { x: 2 * width / 5 - 5,     y: 3 * height / 4 - 40},
+    "(6)":                { x: 2 * width / 5 - 5,     y: 3 * height / 4 - 25},
     "Design":             { x: 3 * width / 5 + 15,    y: 3 * height / 4 - 40},
-    "Other":              { x: 4 * width / 5 + 30,    y: 3 * height / 4 - 40},
+    "(4)":                { x: 3 * width / 5 + 15,    y: 3 * height / 4 - 25},
+    "Others":             { x: 4 * width / 5 + 30,    y: 3 * height / 4 - 40},
+    "(9)":                { x: 4 * width / 5 + 30,    y: 3 * height / 4 - 25},
   };
 
   // Used when setting up force and

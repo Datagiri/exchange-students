@@ -72,6 +72,10 @@ function floatingTooltip(tooltipId, width) {
       tttop = curY + yOffset;
     }
 
+    if(ttleft * 2 > window.innerWidth) {
+      ttleft = ttleft - 275;
+    }
+    
     tt.style({ top: tttop + 'px', left: ttleft + 'px' });
   }
 
