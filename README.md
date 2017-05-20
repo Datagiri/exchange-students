@@ -13,6 +13,9 @@ Bubble-chart summarizing the departments and programs of outbound exchange stude
 Code built upon [Jim Vallandingham's animated bubble chart repository](https://github.com/vlandham/bubble_chart)  
 A live version of this code is [here](https://datagiri.github.io/exchange-students/)  
 
+`stacked_bar`
+Stacked bar chart summarizing the departments and programs of outbound exchange students from IITB.  
+A live version of this code is nowhere
 
 ## Running
 
@@ -23,3 +26,29 @@ Then start a webserver locally. If you are on a Linux or Mac, you should be able
 ```
 python -m SimpleHTTPServer 3000
 ```
+
+# Stacked bar chart
+Because bar charts are better than circles for comparisons
+
+## Run build
+
+Navigate to build directory
+```
+python -m SimpleHTTPServer 3000
+```
+## Running dev
+
+- Install node and npm
+- Navigate to `stacked_bar` folder
+```
+npm install
+npm install -g http-server
+npm run build
+cd build
+http-server
+```
+
+## Contribute
+- Learn react
+- Learn d3js
+- Start coding

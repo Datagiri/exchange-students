@@ -1,0 +1,63 @@
+$color-grey-e2: #F2F2F2;
+$color-white: #FFFFFF;
+$color-toggle: #0a001f;
+
+*{
+  box-sizing: border-box;
+}
+html{
+  padding: 0;
+  margin: 0;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+#root{
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  background-color: $color-grey-e2;
+}
+#graphContainer{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  height: 60vh;
+  min-height: 500px;
+  background-color: $color-white;
+}
+#toggleButton{
+  margin: 0 0 10px 0;
+  width: 150px;
+  font-size: 14px;
+  background-color: $color-toggle;
+  border: 0;
+  padding: 10px;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+.textStyle{
+  font-size: 12px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.rectGroup{
+  position: relative;
+  .rectText{
+    position: absolute;
+    font-size: 12px;
+    font-family: sans-serif;
+    display: none;
+    z-index: 1000;
+  }
+  &:hover{
+    .rectText{
+      display: block;
+    }
+    .rect{
+      opacity: 0.6;
+    }
+  }
+}
