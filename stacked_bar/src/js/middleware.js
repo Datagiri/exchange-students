@@ -1,4 +1,5 @@
 import { applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 // import logger from 'redux-logger';
 
 const logger = () => next => (action) => {
@@ -14,5 +15,5 @@ const error = () => next => (action) => {
   }
 };
 
-const middleware = applyMiddleware(error, logger);
+const middleware = applyMiddleware(error, thunk, logger);
 export default middleware;

@@ -1,5 +1,6 @@
 $color-grey-e2: #F2F2F2;
 $color-white: #FFFFFF;
+$color-toggle: #0a001f;
 
 *{
   box-sizing: border-box;
@@ -24,4 +25,39 @@ body{
   height: 60vh;
   min-height: 500px;
   background-color: $color-white;
+}
+#toggleButton{
+  margin: 0 0 10px 0;
+  width: 150px;
+  font-size: 14px;
+  background-color: $color-toggle;
+  border: 0;
+  padding: 10px;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+.textStyle{
+  font-size: 12px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.rectGroup{
+  position: relative;
+  .rectText{
+    position: absolute;
+    font-size: 12px;
+    font-family: sans-serif;
+    display: none;
+    z-index: 1000;
+  }
+  &:hover{
+    .rectText{
+      display: block;
+    }
+    .rect{
+      opacity: 0.6;
+    }
+  }
 }

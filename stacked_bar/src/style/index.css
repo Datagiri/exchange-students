@@ -21,3 +21,33 @@ body {
   height: 60vh;
   min-height: 500px;
   background-color: #FFFFFF; }
+
+#toggleButton {
+  margin: 0 0 10px 0;
+  width: 150px;
+  font-size: 14px;
+  background-color: #0a001f;
+  border: 0;
+  padding: 10px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer; }
+
+.textStyle {
+  font-size: 12px;
+  font-family: sans-serif;
+  text-transform: uppercase; }
+
+.rectGroup {
+  position: relative; }
+  .rectGroup .rectText {
+    position: absolute;
+    font-size: 12px;
+    font-family: sans-serif;
+    display: none;
+    z-index: 1000; }
+  .rectGroup:hover .rectText {
+    display: block; }
+  .rectGroup:hover .rect {
+    opacity: 0.6; }

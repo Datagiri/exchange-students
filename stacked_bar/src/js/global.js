@@ -1,6 +1,6 @@
 export const graphTypes = {
-  department: 0,
-  program: 1,
+  program: 0,
+  department: 1,
 };
 
 export const departmentColors = {
